@@ -5105,6 +5105,132 @@ html {
 .teacher-card-live-role { color: #4DA3FF; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 12px; }
 .teacher-card-live-bio { color: rgba(255,255,255,0.7); font-size: 14px; line-height: 1.6; margin: 0; }
 
+/* ===== FEATURED INSTRUCTOR — Julie centerpiece, popping out of the fold ===== */
+.teachers-featured-wrap {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 24px;
+  max-width: 1120px;
+  margin: 0 auto 44px;
+  padding: 0 20px;
+}
+.teacher-side {
+  flex: 1 1 0;
+  max-width: 300px;
+  align-self: center;
+  background: linear-gradient(180deg, rgba(255,255,255,0.035) 0%, rgba(255,255,255,0.015) 100%);
+  border: 1px dashed rgba(255,255,255,0.14);
+  border-radius: 22px;
+  padding: 36px 24px;
+  text-align: center;
+  opacity: 0.72;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.teacher-side:hover { opacity: 0.9; transform: translateY(-3px); }
+.teacher-side-orb {
+  width: 66px; height: 66px; border-radius: 50%;
+  margin: 0 auto 18px;
+  background: radial-gradient(circle at 35% 30%, rgba(77,163,255,0.22), rgba(0,110,255,0.06));
+  border: 1px solid rgba(255,255,255,0.10);
+  display: flex; align-items: center; justify-content: center;
+}
+.teacher-side-orb svg { width: 26px; height: 26px; stroke: rgba(77,163,255,0.85); }
+.teacher-side-label { color: #4DA3FF; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; display: block; margin-bottom: 8px; }
+.teacher-side-text { color: rgba(255,255,255,0.55); font-size: 14px; line-height: 1.55; margin: 0; }
+
+/* The star card */
+.teacher-featured {
+  position: relative;
+  flex: 0 0 auto;
+  width: min(400px, 100%);
+  margin-top: -34px;
+  margin-bottom: -18px;
+  z-index: 3;
+  background: linear-gradient(180deg, #0d1830 0%, #081221 100%);
+  border: 1px solid rgba(77,163,255,0.34);
+  border-radius: 28px;
+  padding: 40px 32px 34px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.03) inset,
+    0 30px 70px -22px rgba(0,40,120,0.75),
+    0 0 60px -12px rgba(0,110,255,0.35);
+  transition: transform 0.45s cubic-bezier(.2,.8,.2,1), box-shadow 0.45s ease, border-color 0.45s ease;
+  overflow: hidden;
+}
+.teacher-featured::before {
+  content: "";
+  position: absolute; inset: -40% 0 auto 0; height: 320px;
+  background: radial-gradient(ellipse at 50% 0%, rgba(0,120,255,0.28) 0%, rgba(0,120,255,0) 65%);
+  pointer-events: none;
+}
+.teacher-featured:hover {
+  transform: translateY(-10px) scale(1.015);
+  border-color: rgba(77,163,255,0.6);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.05) inset,
+    0 44px 90px -20px rgba(0,50,140,0.85),
+    0 0 90px -8px rgba(0,120,255,0.5);
+}
+.teacher-featured-crown {
+  position: relative; z-index: 2;
+  display: inline-flex; align-items: center; gap: 7px;
+  background: linear-gradient(90deg, #0057d6, #2f8bff);
+  color: #fff; font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 7px 15px; border-radius: 999px; margin-bottom: 24px;
+  box-shadow: 0 6px 18px -4px rgba(0,110,255,0.6);
+}
+.teacher-featured-crown svg { width: 14px; height: 14px; fill: #FFD86B; }
+.teacher-featured-photo {
+  position: relative; z-index: 2;
+  width: 168px; height: 168px; border-radius: 50%;
+  margin: 0 auto 22px;
+  overflow: hidden;
+  border: 3px solid rgba(77,163,255,0.55);
+  box-shadow: 0 0 0 8px rgba(0,110,255,0.10), 0 18px 40px -12px rgba(0,0,0,0.6);
+}
+.teacher-featured-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 22%; }
+.teacher-featured-name {
+  position: relative; z-index: 2;
+  color: #fff; font-family: 'Codec Pro', Inter, sans-serif;
+  font-size: 27px; font-weight: 800; letter-spacing: -0.01em; margin: 0 0 8px;
+}
+.teacher-featured-role {
+  position: relative; z-index: 2;
+  color: #4DA3FF; font-size: 12.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  display: block; margin-bottom: 18px;
+}
+.teacher-featured-bio {
+  position: relative; z-index: 2;
+  color: rgba(255,255,255,0.72); font-size: 14.5px; line-height: 1.62; margin: 0 auto 22px; max-width: 320px;
+}
+.teacher-featured-stats {
+  position: relative; z-index: 2;
+  display: flex; justify-content: center; gap: 10px; margin-bottom: 24px;
+}
+.teacher-featured-stat {
+  flex: 1 1 0; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 12px; padding: 12px 8px;
+}
+.teacher-featured-stat b { display: block; color: #fff; font-size: 18px; font-weight: 800; font-family: 'Codec Pro', Inter, sans-serif; }
+.teacher-featured-stat span { display: block; color: rgba(255,255,255,0.5); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 3px; }
+.teacher-featured-link {
+  position: relative; z-index: 2;
+  display: inline-flex; align-items: center; gap: 7px;
+  color: #4DA3FF; font-size: 13px; font-weight: 700; letter-spacing: 0.04em;
+}
+.teacher-featured-link svg { width: 16px; height: 16px; transition: transform 0.3s ease; }
+.teacher-featured:hover .teacher-featured-link svg { transform: translateX(4px); }
+
+@media (max-width: 860px) {
+  .teachers-featured-wrap { flex-direction: column; align-items: center; gap: 18px; }
+  .teacher-side { max-width: 400px; width: 100%; order: 2; opacity: 0.6; }
+  .teacher-featured { order: 1; margin-top: 0; margin-bottom: 0; width: 100%; max-width: 420px; }
+}
+
 /* Placeholder */
 .teachers-placeholder {
   max-width: 820px;
@@ -6465,6 +6591,11 @@ html {
 .instructors .eyebrow { color: #66b8ff !important; }
 .instructors .section-title { color: #fff !important; }
 .instructors .section-subtitle { color: rgba(255,255,255,0.7) !important; }
+/* Featured faculty card — force readable light text on dark card (overrides .instructors p navy rule) */
+.instructors .teacher-featured-bio { color: rgba(255,255,255,0.74) !important; }
+.instructors .teacher-side-text { color: rgba(255,255,255,0.42) !important; }
+.instructors .teacher-featured-name { color: #fff !important; }
+.instructors .teacher-featured-role { color: #4DA3FF !important; }
 .certs-strip-inline {
   margin-top: 56px;
   padding: 40px 32px;
@@ -8573,18 +8704,49 @@ src="https://www.facebook.com/tr?id=1440305917310328&ev=PageView&noscript=1"
       <p class="section-subtitle" style="margin: 0 auto; max-width: 720px;">A faculty of certified specialists, researchers, and protocol designers backed by the most recognized credentialing bodies in the field.</p>
     </div>
 
-    <!-- LIVE instructor grid — add signed instructors here as they're confirmed -->
-    <div class="teachers-grid-live reveal">
-      <!-- When an instructor signs, paste a block like this:
-      <div class="teacher-card-live">
-        <div class="teacher-card-live-photo"><img src="assets/instructors/name.jpg" alt="Dr. Name"></div>
-        <div class="teacher-card-live-body">
-          <h4 class="teacher-card-live-name">Dr. Full Name</h4>
-          <span class="teacher-card-live-role">Specialty · Credentials</span>
-          <p class="teacher-card-live-bio">Short bio.</p>
+    <!-- FEATURED FACULTY — Julie Gibson Clark, centerpiece -->
+    <div class="teachers-featured-wrap reveal">
+
+      <!-- Left: next faculty placeholder -->
+      <div class="teacher-side" aria-hidden="true">
+        <div class="teacher-side-orb">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
         </div>
+        <span class="teacher-side-label">Faculty</span>
+        <p class="teacher-side-text">More world-class longevity specialists announced soon.</p>
       </div>
-      -->
+
+      <!-- CENTER: Julie — the star, popping out -->
+      <a class="teacher-featured" href="instructors/julie-gibson-clark.html">
+        <span class="teacher-featured-crown">
+          <svg viewBox="0 0 24 24"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm0 3h14v2H5v-2z"/></svg>
+          Founding Faculty
+        </span>
+        <div class="teacher-featured-photo">
+          <img src="assets/instructors/julie-gibson-clark.jpg" alt="Julie Gibson Clark">
+        </div>
+        <h3 class="teacher-featured-name">Julie Gibson Clark</h3>
+        <span class="teacher-featured-role">World #2 · Rejuvenation Olympics</span>
+        <p class="teacher-featured-bio">The single mom from Phoenix who out-aged the billionaires — ranked #2 in the world on the Rejuvenation Olympics on a fraction of the budget. Now she teaches the exact protocol at Longevity Life Academy.</p>
+        <div class="teacher-featured-stats">
+          <div class="teacher-featured-stat"><b>0.665</b><span>Pace of Aging</span></div>
+          <div class="teacher-featured-stat"><b>#2</b><span>World Rank</span></div>
+          <div class="teacher-featured-stat"><b>~$12</b><span>A Day</span></div>
+        </div>
+        <span class="teacher-featured-link">Read her full story
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
+      </a>
+
+      <!-- Right: next faculty placeholder -->
+      <div class="teacher-side" aria-hidden="true">
+        <div class="teacher-side-orb">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+        </div>
+        <span class="teacher-side-label">Faculty</span>
+        <p class="teacher-side-text">Certified researchers &amp; protocol designers joining the cohort.</p>
+      </div>
+
     </div>
 </div>
 
